@@ -10,7 +10,7 @@ class FaceToFace():
         sub = rospy.Subscriber("/cv_camera/image_raw", Image, self.get_image)
         self.bridge = CvBridge()
         self.image_org = None
-        self.pub = rospy.Publisher("face", image, queue_size=1)
+        self.pub = rospy.Publisher("face", Image, queue_size=1)
 
     def get_image(self, img):
         try:
